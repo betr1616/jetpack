@@ -105,6 +105,10 @@ class SearchApp extends Component {
 
 	onChangeQueryString = () => {
 		this.getResults();
+
+		document.querySelectorAll( this.props.themeOptions.searchInputSelector ).forEach( input => {
+			input.value = getSearchQuery();
+		} );
 	};
 
 	loadNextPage = () => {
